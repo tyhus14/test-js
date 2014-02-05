@@ -55,9 +55,9 @@
           expect(students).to.be.an('object');
         });
 
-        it("should have students not be a string", function(){
+        it("should have students not be a string or an array", function(){
           var students = new Collection([{name: 'Jim', id: '99'}]);
-          expect(students).to.not.be.an('object');
+          expect(students).to.not.be.a('string' || 'array');
         });
 
         
