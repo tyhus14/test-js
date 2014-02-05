@@ -3,11 +3,11 @@
 (function () {
     'use strict';
 
-    describe('Give it some context', function () {
-        describe('maybe a bit more context here', function () {
-            it('should run here few assertions', function () {
-              var answer = 2;
-              expect(2).to.equal(answer);
+    describe('Checking if object exists', function () {
+        describe('within the array models', function () {
+            it('should have two objects', function () {
+              var models = []
+              expect(models).to.have.length(2);
             });
         });
     });
