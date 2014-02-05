@@ -38,23 +38,29 @@
           var students = new Collection([{name: 'Jim', id: '99'}]);
           expect(students.find('1')).to.equal(undefined);
         });
- 
-        it("should throw an error when given an arguemnt other than a string", function(){
-          var students = new Collection([{name: 'Jim', id: '99'}]);
-          expect(function(){students.find(1)}).to.throw(Error);
-          expect(function(){students.find({})}).to.throw(Error);
-          expect(function(){students.find([])}).to.throw(Error);
-        });
 
         it('should return an object when given an name that is present in the models', function(){
         	var students = new Collection([{name: 'Jim', id: '99'}]);
-        	expect(students.find('99')).to.deep.equal({name: 'Jim', id: '99'});
+        	expect(students.find('Jim')).to.deep.equal({name: 'Jim', id: '99'});
         });
 
-        it('should return an object when given a name and id that is present in the models', function(){
-        	var students = new Collection([{name: 'Jim', id: '99'}]);
-        	expect(students.find('99')).to.deep.equal({name: 'Jim', id: '99'});
+
+        it("should return undefined when name is not present in the models", function(){
+          var students = new Collection([{name: 'Jim', id: '99'}]);
+          expect(students.find('Sammy')).to.equal(undefined);
         });
+
+        it("should have students be an object", function(){
+          var students = new Collection([{name: 'Jim', id: '99'}]);
+          expect(students).to.be.an('object');
+        });
+
+        it("should have students not be a string", function(){
+          var students = new Collection([{name: 'Jim', id: '99'}]);
+          expect(students).to.not.be.an('object');
+        });
+
+        
 
       });
  
