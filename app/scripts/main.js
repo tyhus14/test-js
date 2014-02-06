@@ -18,7 +18,9 @@ function Collection (models) {
     };
   };
 
-  
+  this.add = function(){
+  	var result;
+  };
 
 
 };
