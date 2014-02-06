@@ -65,7 +65,13 @@
       });
  
       describe("has an .add() method",function(){
-        it("should add the object it's given to the models property");
+        it("should add the object it's given to the models property", function(){
+        	var morePeople = [{name: 'Jim', id: '99'}];
+            var students = new Collection(morePeople);
+            students.add({name: 'Steve', id: '77'});
+
+        });
+
         it("should increase the models property's length by 1");
         it("should only accept a single object as an argument");
         it("should not  accept an empty object as an argument");
@@ -73,12 +79,17 @@
       });
  
       describe("has a .remove() method",function(){
-        it("should, when given an id, remove the corresponding object from the models property")
+        it("should, when given an id, remove the corresponding object from the models property", function(){
+          var students = new Collection([{name: 'Jim', id: '99'}, {name: 'Steve', id: '77'}]);
+          expect(students.remove('77')).to.deep.equal({name: 'Jim', id: '99'});
+        
+        });
+
         it("should decrease the models property's length by 1");
         it("should only accept a single string as an id argument");
         it("should return true on successful removal");
-      })
-    })
+      });
+    });
 })();
     
 

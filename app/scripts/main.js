@@ -5,19 +5,23 @@ function Collection (models) {
  
   this.find = function(id) {
     var result;
- 
     
  
     this.models.forEach(function(value, index){
       if (value.id == id || value.name == id) {
         result = value;
-      }
+      };
     });
  
     if (result) {
       return result;
-    }
-  }
-}
+    };
+  };
+
+  
+
+
+};
+
 
 
