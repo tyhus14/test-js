@@ -51,12 +51,19 @@
  
       describe("has an .add() method",function(){
         it("should add the object it's given to the models property", function(){
-          var students = new Collection([{name: 'Jim', id: '99'}]);
-          students.add({name: 'Sally', id: '33'});
-          expect(students.add([1])).to.eql({name: 'Sally', id: '33'});
+           var students = new Collection([{name: 'Jim', id: '99'}]);
+            students.add({name: 'Sally', id: '33'});
+
+            expect(students.models[1]).to.deep.equal({name: 'Sally', id: '33'});
         });
 
-        it("should increase the models property's length by 1");
+        it("should increase the models property's length by 1", function(){
+        	var students = new Collection([{name: 'Jim', id: '99'}]);
+            students.add({name: 'Sally', id: '33'});
+
+            expect(students.models.length).to.deep.equal(2);
+        });
+
         it("should only accept a single object as an argument");
         it("should not  accept an empty object as an argument");
         it("should throw an error when given an object without and id property");
