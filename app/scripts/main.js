@@ -5,12 +5,15 @@ function Collection (models) {
  
   this.find = function(id) {
     var result;
-    
+ 
+    if (typeof(id) != 'string') {
+      throw new Error("Whoops!");
+    }
  
     this.models.forEach(function(value, index){
-      if (value.id == id || value.name == id) {
+      if (value.id == id) {
         result = value;
-      };
+      }
     });
  
     if (result) {
@@ -18,12 +21,14 @@ function Collection (models) {
     };
   };
 
-  this.add = function(){
+  this.add = function (group){
   	var result;
+
+  	this.models.push(group);
   };
-
-
 };
+
+
 
 
 
