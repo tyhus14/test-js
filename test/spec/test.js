@@ -126,10 +126,21 @@
 
             expect(students.models.length).to.equal(0);
         });
+
+         it("should return true on successful removal", function(){
+        	var students = new Collection([{name: 'Jim', id: '99'}, {name: 'Sally', id: '33'}]);
+           
+            expect(students.empty()).to.equal(true);
+        });
+
       })
  
       describe("has an .random() method", function(){
-        it('should return a random object from the models array');
+        it('should return a random object from the models array', function(){
+        	var students = new Collection([{name: 'Jim', id: '99'}, {name: 'Sally', id: '33'}]);
+        	sampleStudent = students.random();
+            expect(students.models).to.include(sampleStudent);
+        });
       });
  
       describe("has a .length() method", function(){

@@ -53,7 +53,7 @@ function Collection (models) {
   this.empty = function (){
   		
   		this.models = [];
-  		return true;
+  		return true
   };
 
   	
