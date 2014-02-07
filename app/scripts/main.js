@@ -24,9 +24,9 @@ function Collection (models) {
   this.add = function (group){
   	var result;
 
-  	this.models.push(group);
-  };
-};
+  	this.models.push(group)
+  }
+}
 
 
 
