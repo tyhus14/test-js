@@ -124,7 +124,7 @@
         	var students = new Collection([{name: 'Jim', id: '99'}, {name: 'Sally', id: '33'}]);
             students.empty();
 
-            expect(students.models.length).to.equal(2);
+            expect(students.models.length).to.equal(0);
         });
       })
  
