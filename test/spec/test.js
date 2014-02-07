@@ -119,6 +119,13 @@
 
             expect(students.models).to.deep.equal([]);
         });
+
+        it('should decrease the models length to 0', function(){
+        	var students = new Collection([{name: 'Jim', id: '99'}, {name: 'Sally', id: '33'}]);
+            students.empty();
+
+            expect(students.models.length).to.equal(2);
+        });
       })
  
       describe("has an .random() method", function(){
