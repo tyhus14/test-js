@@ -74,9 +74,9 @@
             expect(function(){students.add({})}).to.throw(Error);
         });
 
-        it("should throw an error when given an object without and id property", function(){
+        it("should throw an error when given an object without an id property", function(){
         var students = new Collection([{name: 'Jim', id: '99'}]);
-            expect(function(){students.add({name: 'Sally', id: "" })}).to.throw(Error);
+            expect(function(){students.add({name: 'Sally', pet: "" })}).to.throw(Error);
         });
       });
  

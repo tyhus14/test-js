@@ -31,6 +31,10 @@ function Collection (models) {
   		if (_.isEmpty(group)){
   			throw new Error('It is empty');
   		}
+
+  		if (!group.hasOwnProperty('id')) {
+  			throw new Error('this is undefined');
+  		}
   	
 
   	this.models.push(group);
