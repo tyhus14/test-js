@@ -64,13 +64,20 @@
             expect(students.models.length).to.equal(2);
         });
 
-        it("should only accept a single object as an argument", function(){
-        	var students = new Collection([{name: 'Jim', id: '99'}]);
-            expect(function(){students.add({name: 'Sally', id: '33'}, {name: 'Steve', id: '45'})}).to.throw(Error);
+        // it("should only accept a single object as an argument", function(){
+        // 	var students = new Collection([{name: 'Jim', id: '99'}]);
+        //     expect(function(){students.add({name: 'Sally', id: '33'}, {name: 'Steve', id: '45'})}).to.throw(Error);
+        // });
+
+        it("should not  accept an empty object as an argument", function(){
+        var students = new Collection([{name: 'Jim', id: '99'}]);
+            expect(function(){students.add({})}).to.throw(Error);
         });
 
-        it("should not  accept an empty object as an argument");
-        it("should throw an error when given an object without and id property");
+        it("should throw an error when given an object without and id property", function(){
+        var students = new Collection([{name: 'Jim', id: '99'}]);
+            expect(function(){students.add({name: 'Sally', id: "" })}).to.throw(Error);
+        });
       });
  
       describe("has a .remove() method",function(){

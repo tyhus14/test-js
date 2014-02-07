@@ -24,9 +24,19 @@ function Collection (models) {
   this.add = function (group){
   	var result;
 
-  	this.models.push(group)
-  }
-}
+  // 	 if (group.length > 1) {
+  // 		throw new Error('You can only type one object');
+  // };
+
+  		if (_.isEmpty(group)){
+  			throw new Error('It is empty');
+  		}
+  	
+
+  	this.models.push(group);
+  };
+  
+};
 
 
 
