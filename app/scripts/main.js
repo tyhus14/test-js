@@ -43,7 +43,9 @@ function Collection (models) {
   this.remove = function (removePerson){
   		var result;
 
-	this.models.splice(removePerson);
+		this.models = _.reject(models, function(idToRemove){
+			return idToRemove.id == removePerson;
+		})
   };
 
   	

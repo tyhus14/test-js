@@ -83,7 +83,7 @@
       describe("has a .remove() method",function(){
         it("should, when given an id, remove the corresponding object from the models property", function(){
         var students = new Collection([{name: 'Jim', id: '99'}, {name: 'Sally', id: '33'}]);
-            students.remove({name: 'Jim', id: '99'});
+            students.remove('99');
 
             expect(students.models[0]).to.deep.equal({name: 'Sally', id: '33'});
         });
