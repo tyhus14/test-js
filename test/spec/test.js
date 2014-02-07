@@ -115,9 +115,9 @@
       describe("has an .empty() method", function(){
         it('should clear out the models array', function(){
         	var students = new Collection([{name: 'Jim', id: '99'}, {name: 'Sally', id: '33'}]);
-            students.empty(students);
+            students.empty();
 
-            expect(students.models).to.equal([]);
+            expect(students.models).to.deep.equal([]);
         });
       })
  
