@@ -76,12 +76,19 @@
 
         it("should throw an error when given an object without an id property", function(){
         var students = new Collection([{name: 'Jim', id: '99'}]);
-            expect(function(){students.add({name: 'Sally', pet: "" })}).to.throw(Error);
+            expect(function(){students.add({name: 'Sally', pet: "dog" })}).to.throw(Error);
         });
       });
  
       describe("has a .remove() method",function(){
-        it("should, when given an id, remove the corresponding object from the models property")
+        it("should, when given an id, remove the corresponding object from the models property", function(){
+        var students = new Collection([{name: 'Jim', id: '99'}, {name: 'Sally', id: '33'}]);
+            students.remove({name: 'Jim', id: '99'});
+
+            expect(students.models[0]).to.deep.equal({name: 'Sally', id: '33'});
+        });
+
+
         it("should decrease the models property's length by 1");
         it("should only accept a single string as an id argument");
         it("should return true on successful removal");

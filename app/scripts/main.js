@@ -39,7 +39,15 @@ function Collection (models) {
 
   	this.models.push(group);
   };
-  
+
+  this.remove = function (removePerson){
+  		var result;
+
+	this.models.splice(removePerson);
+  };
+
+  	
+
 };
 
 
