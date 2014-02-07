@@ -89,7 +89,14 @@
         });
 
 
-        it("should decrease the models property's length by 1");
+        it("should decrease the models property's length by 1", function(){
+        var students = new Collection([{name: 'Jim', id: '99'}, {name: 'Sally', id: '33'}]);
+            students.remove('99');
+
+            expect(students.models.length).to.deep.equal(1);
+        });
+
+
         it("should only accept a single string as an id argument");
         it("should return true on successful removal");
       })
