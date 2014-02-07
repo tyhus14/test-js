@@ -100,8 +100,9 @@
         it("should only accept a single string as an id argument", function(){
         	var students = new Collection([{name: 'Jim', id: '99'}, {name: 'Sally', id: '33'}]);
            
-
-            expect(function(){students.remove('99', '33')}).to.throw(Error);
+			expect(function(){students.remove(1)}).to.throw(Error);
+	        expect(function(){students.remove({})}).to.throw(Error);
+	        expect(function(){students.remove([])}).to.throw(Error);
         	
         });
 

@@ -43,9 +43,15 @@ function Collection (models) {
   this.remove = function (removePerson){
   		var result;
 
+  		if (_.isString(removePerson) != true) {
+  			throw new Error('this is not a string');
+  		}
+
 		this.models = _.reject(models, function(idToRemove){
 			return idToRemove.id == removePerson;
 		})
+
+
   };
 
   	
