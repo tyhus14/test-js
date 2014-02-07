@@ -103,14 +103,22 @@
 			expect(function(){students.remove(1)}).to.throw(Error);
 	        expect(function(){students.remove({})}).to.throw(Error);
 	        expect(function(){students.remove([])}).to.throw(Error);
-        	
         });
 
-        it("should return true on successful removal");
+        it("should return true on successful removal", function(){
+        	var students = new Collection([{name: 'Jim', id: '99'}, {name: 'Sally', id: '33'}]);
+            expect(students.remove('99')).to.equal(true);
+        });
+
       })
 
       describe("has an .empty() method", function(){
-        it('should clear out the models array');
+        it('should clear out the models array', function(){
+        	var students = new Collection([{name: 'Jim', id: '99'}, {name: 'Sally', id: '33'}]);
+            students.empty(students);
+
+            expect(students.models).to.equal([]);
+        });
       })
  
       describe("has an .random() method", function(){
