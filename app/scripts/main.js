@@ -56,6 +56,12 @@ function Collection (models) {
   		return true
   };
 
+  this.random = function(){
+  		sampleStudent = _.sample(this.models);
+  			return sampleStudent
+  };
+  
+
   	
 
 };
