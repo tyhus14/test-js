@@ -157,9 +157,22 @@
       });
  
       describe("has a .length() method", function(){
-        it('should return the length models array');
-      })
-    })
+        it('should return the length models array', function(){
+
+          var students = new Collection([{name: 'Jim', id: '99'}, {name: 'Sally', id: '33'}, {name: 'Billy', id: '44'}]);
+
+            expect(students.length()).to.equal(students.models.length)
+        });
+
+         it('should not accept a string as an arguments', function(){
+
+          var students = new Collection([{name: 'Jim', id: '99'}, {name: 'Sally', id: '33'}, {name: 'Billy', id: '44'}]);
+
+            expect(function(){students.length('this is an example')}).to.throw(Error)
+        });
+
+      });
+    });
 })();
     
 

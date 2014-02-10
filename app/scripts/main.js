@@ -60,6 +60,14 @@ function Collection (models) {
   		sampleStudent = _.sample(this.models);
   			return sampleStudent
   };
+
+  this.length = function(){
+      return models.length
+
+
+  };
+
+ 
   
 
   	
